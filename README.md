@@ -62,6 +62,31 @@ Default value when initialized.
 Since String is an array of characters, most techniques will also apply to **String** problems.
 
 ### Sliding Window.
+* Applies to subarray and substring problems.
+* Two pointers starting from the begining and moves to the same direction. They will never cross each other.
+* Time complexity is usually O(n). Each elements is visited once or at most twice.
+``` java
+// initialize two pointer
+int left = 0;
+int right = 0;
+// right pointer iterates over the array
+while(right < arr.length) {
+    Type r = arr[right];
+    /* 
+        Ensure our sliding window is valid.
+        Condition might have a different time complexity.
+        Ideally O(1).
+        Sometimes does not need a loop
+        depends on the problem and optimization.
+    */
+    while(condition != true) {
+        Type l = arr[left];
+        left++;
+    }
+    // our window between [left, right] is valid
+    right++;
+}
+```
 
 ### Two Pointers.
 
