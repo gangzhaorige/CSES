@@ -61,7 +61,17 @@ Default value when initialized.
 ## Techniques.
 Since String is an array of characters, most techniques will also apply to **String** problems.
 
-### Sliding Window
+### Sliding Window.
+
+### Two Pointers.
+
+### Traverse from Right to Left.
+
+### Sorting the Arrray.
+
+### Index as Hash Key.
+
+### Traverse the array more than once.
 
 
 
