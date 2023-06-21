@@ -58,35 +58,63 @@ Default value when initialized.
 * Array with 1 or 2 elements.
 * Duplicated values in the array.
 
-## Techniques.
+## Techniques & Tips.
 Since String is an array of characters, most techniques will also apply to **String** problems.
+
+### Circular Array
+* If there is a circular array, concat orignal array with itself to make the problem easier.
+* Samething for string, if we are shifting character from one end to another.
 
 ### Sliding Window.
 * Applies to subarray and substring problems.
 * Two pointers starting from the begining and moves to the same direction. They will never cross each other.
 * Time complexity is usually O(n). Each element is visited once or at most twice.
+* Window size could be flexible or fixed.
+* Sometimes you need to calculate the window size.
+* Useful data structure for sliding window. HashMap -> Element - Position, Element -> Frequency. Queue minQue and maxQueue to keep track of min/max in the window.
 ``` java
-// initialize two pointer
+// flexible window
 int left = 0;
 int right = 0;
 // right pointer iterates over the array
 while(right < arr.length) {
     Type r = arr[right];
+    // condition updated
     /* 
         Ensure our sliding window is valid.
         Condition might have a different time complexity.
         Ideally O(1).
-        Sometimes does not need a loop
+        Sometimes does not need a while loop
+        it could be an if statement
         depends on the problem and optimization.
+        Ex: left could jump to another index
+        instead of incremented by 1.
     */
     while(condition != true) {
         Type l = arr[left];
+        // update until condition is met
         left++;
     }
     // our window between [left, right] is valid
     right++;
 }
+// fixed window
+while(right < arr.length) {
+    Type r = arr[right];
+    // condition updated
+    if(right - left + 1== windowSize && condition) {
+        // update answer
+        Type l = arr[left];
+        // update leftSide
+        left++;
+        // Ex: left could jump to another index
+        // instead of incremented by 1.
+    }
+    // our window between [left, right] is valid
+    right++;
+}
 ```
+
 
 ### Two Pointers.
 
